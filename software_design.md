@@ -38,6 +38,10 @@ Function oriented design is best described by top-down design.
 
 #### 3. In which design methodology would a class diagram be most useful?
 
+A class diagram is a visualisation of classes and their relationships. It includes class name, attributes, methods and access modifiers.
+
+Class diagram is most useful for object oriented design because the classes define blueprint for creating objetcs, and each class defines set of attributes and object's behaviours.
+
 
 #### 4. What are the four pillars of object oriented programming? Give a single-sentence description of each.
 
