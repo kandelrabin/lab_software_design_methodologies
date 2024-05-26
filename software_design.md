@@ -45,6 +45,15 @@ Class diagram is most useful for object oriented design because the classes defi
 
 #### 4. What are the four pillars of object oriented programming? Give a single-sentence description of each.
 
+The four pillars of OOP are inheritance, polymorphism, encapsulation and abstraction.
+
+- **Inheritance**: It is the ability to create a class (sub class) from existing class (super class) where the sub class inherits all properties of the super class.
+- **Polymorphism**: It is the ability of an object to take on multiple forms.
+- **Encapsulation**: It is the process of hiding the attributes inside a class to prevent unauthorised access to them.
+- **Abstraction**: It is the process of showing only the essential functionality to the user and hiding implementation details.
+
+
+
 #### 5. What is the strategy pattern? How would its implementation differ between a functional and object oriented system?
 
 #### 6. Imagine your development team is creating a new online payment system. In order to gain maximum market share it can't be tied to a particular sector - it needs to work just as well when ordering a takeaway as when buying a new coat. Which design methodology would you suggest following? Give some justification for your decision.
