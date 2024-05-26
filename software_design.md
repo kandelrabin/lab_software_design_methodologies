@@ -28,7 +28,7 @@ A good software design has high cohesion and low coupling.
 > The **bottom-up design** approach focuses on identifying and defining individual components of the system, and then integrating them together to build bigger components. 
 
 - Bottom-up design is based on composition approach.
-- Bottom-up design facilitates scalibility as it allows component reusability and reduces data redundancy.
+- Bottom-up design facilitates scalability as it allows component reusability and reduces data redundancy.
 
 
 Function oriented design starts as a high level requirement, which is then refined to specific details to solve the problem. 
@@ -40,7 +40,7 @@ Function oriented design is best described by top-down design.
 
 A class diagram is a visualisation of classes and their relationships. It includes class name, attributes, methods and access modifiers.
 
-Class diagram is most useful for object oriented design because the classes define blueprint for creating objetcs, and each class defines set of attributes and object's behaviours.
+Class diagram is most useful for object oriented design because a class defines blueprint for creating objects, and each class defines set of attributes and object's behaviours.
 
 
 #### 4. What are the four pillars of object oriented programming? Give a single-sentence description of each.
@@ -56,4 +56,27 @@ The four pillars of OOP are inheritance, polymorphism, encapsulation and abstrac
 
 #### 5. What is the strategy pattern? How would its implementation differ between a functional and object oriented system?
 
-#### 6. Imagine your development team is creating a new online payment system. In order to gain maximum market share it can't be tied to a particular sector - it needs to work just as well when ordering a takeaway as when buying a new coat. Which design methodology would you suggest following? Give some justification for your decision.
+> A **strategy pattern** is a behavioral design pattern that allows dynamically switching the behavior of an object at runtime. The strategy pattern allows family of algorithms or behaviors to be encapsulated into separate classes called strategies.
+
+In object oriented implementation of strategy pattern the strategy is implemented as an interface and the family of algorithms and behaviors are encapsulated within the concrete implementations of the interface. With the strategy pattern, we are abiding by the Open/Closed principle, one of the SOLID principles, as new strategies can be added without without modifying existing code.
+
+In functional oriented implementation of strategy pattern, a strategy could be implemented as a higher order function, or even a closure, which can then return other functions or take functions as arguments.
+
+
+#### 6. Imagine your team is creating a new online payment system. In order to gain maximum market share it can't be tied to a particular sector - it needs to work just as well when ordering a takeaway as when buying a new coat. Which design methodology would you suggest following? Give some justification for your decision.
+
+I would suggest using object oriented design approach for designing the new online payment system. This is due to following reasons:
+
+- Debugging is easier when components are loosely coupled.
+- By using encapsulation we can provide better data security.
+- Improves code reusability across different parts of application.
+- Ability to extend without modification makes application easy to scale.
+
+To make the payment system generic that is compatible with many different sector, we can implement strategy pattern by creating a delegator class and strategies interface. For every new sector, we would only have to add new strategy concrete implementation with specific algorithms, attributes and behaviors.
+
+The class diagram of such application could include following classes (to name a few): 
+
+- **`Customer`**: Represents users of the system. Attributes are encapsulated for security, and Getter and setters are provided only for non sensitive information such as `user_id`. Can implement an interface for account, which provides common datatype to hander other non-customer user types, such as admins.
+- **`<<Interface>> ISector`**: Enables polymorphism where many specific sector can have a type called ISector. This enables us to use same methods to process payments for various sectors.
+- **`<<Payment>>`**: Is an abstract class that allows inheritance for multiple forms of payments, such as credit cards, debit cards, apple pay, pay pal. This class could provide methods to authenticate and receive payments from customers. All the methods contained in this class should follow single responsibility principle.
+
