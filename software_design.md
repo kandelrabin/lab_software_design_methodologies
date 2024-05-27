@@ -76,7 +76,7 @@ To make the payment system generic that is compatible with many different sector
 
 The class diagram of such application could include following classes (to name a few): 
 
-- **`Customer`**: Represents users of the system. Attributes are encapsulated for security, and Getter and setters are provided only for non sensitive information such as `user_id`. Can implement an interface for account, which provides common datatype to hander other non-customer user types, such as admins.
+- **`Customer`**: Represents users of the system. Attributes are encapsulated for security, and getters and setters are provided only for non-sensitive information such as `user_id`. We could implement an interface for account, which provides common datatype to handle other user types, such as admins.
 - **`<<Interface>> ISector`**: Enables polymorphism where many specific sector can have a type called ISector. This enables us to use same methods to process payments for various sectors.
 - **`<<Payment>>`**: Is an abstract class that allows inheritance for multiple forms of payments, such as credit cards, debit cards, apple pay, pay pal. This class could provide methods to authenticate and receive payments from customers. All the methods contained in this class should follow single responsibility principle.
 
